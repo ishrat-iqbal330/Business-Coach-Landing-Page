@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg--[#3a2e25] text-white py-16 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
-        {/* Brand / Mission */}
+       
         <div className="col-span-2 space-y-4">
           <h3 className="text-2xl font-bold text-[#D9783C]">Michael Herz Coaching</h3>
           <p className=" text-sm">
@@ -23,6 +23,7 @@ const Footer = () => {
             <li><a href="#about" className="hover:text-[#D9783C]">About</a></li>
             <li><a href="#coaching" className="hover:text-[#D9783C]">Coaching</a></li>
             <li><a href="#services" className="hover:text-[#D9783C]">Services</a></li>
+            <li><a href="#testimonials" className="hover:text-[#D9783C]">Testimonials</a></li>
             <li><a href="#contact" className="hover:text-[#D9783C]">Contact</a></li>
           </ul>
         </div>

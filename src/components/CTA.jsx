@@ -2,7 +2,7 @@ import React from "react";
 
 const CallToAction = () => {
   return (
-    <section id="cta" className="relative py-20 overflow-hidden">
+    <section id="cta" className="relative py-24 overflow-hidden ">
       {/* 1. Background image with opacity */}
       <img
         src="./CTA.webp"

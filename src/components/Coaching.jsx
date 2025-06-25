@@ -18,56 +18,61 @@ const Coaching = () => {
   ];
 
   return (
-    <section
-      id="coaching"
-      className="bg-[#f9efe9] text-[#3a2e25] py-20 px-6"
-    >
-      <div className="max-w-6xl mx-auto text-center space-y-16">
+    <section id="coaching" className="bg-[#f9efe9] text-[#3a2e25] py-24 px-4">
+      <div className="max-w-6xl mx-auto text-center space-y-12">
         {/* Header */}
-        <div className="space-y-5">
-          <h2 className="text-3xl sm:text-5xl font-bold text-[#D9783C]">
+        <div className="space-y-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#D9783C]">
             Transformational Coaching That Works
           </h2>
-          <p className="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed text-[#3a2e25]">
-            Stuck in your career or overwhelmed with stress? My coaching clears
-            the fog, restores your confidence, and helps you move with purpose—
-            without pressure to pretend.
+          <div className="h-1 w-20 bg-[#D9783C] mx-auto rounded-full" />
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Feeling stuck, overwhelmed, or lacking confidence at work? <br />
+            My coaching cuts through the noise, helping you show up authentically, think clearly,
+            and act with purpose.
           </p>
         </div>
 
-        {/* Video Previews */}
-        <div className="grid md:grid-cols-2 gap-10 px-2">
-          {videos.map((video, index) => (
+        {/* Video Cards */}
+        <div className="grid md:grid-cols-2 gap-12">
+          {videos.map((video, i) => (
             <a
-              key={index}
+              key={i}
               href={video.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group overflow-hidden rounded-3xl shadow-xl transform transition-transform duration-300 hover:scale-[1.015] bg-[#f0e5dd]"
+              className="group block bg-[#f0e5dd] rounded-3xl overflow-hidden shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              <img
-                src={video.src}
-                alt={video.alt}
-                className="w-full h-64 sm:h-80 object-cover rounded-3xl group-hover:brightness-75 transition-all duration-300"
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="bg-red-600/90 hover:bg-red-700 transition-all duration-300 p-5 rounded-full shadow-xl scale-110 group-hover:scale-125">
-                  <Play className="text-white w-7 h-7 sm:w-8 sm:h-8" />
+              {/* Thumbnail */}
+              <div className="relative">
+                <img
+                  src={video.src}
+                  alt={video.alt}
+                  className="w-full h-64 sm:h-80 object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-red-600/90 p-4 rounded-full shadow-lg transition-all duration-300 group-hover:scale-110">
+                    <Play className="text-white w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
                 </div>
-                <p className="mt-4 text-white text-sm sm:text-base font-semibold bg-[#3a2e25]/70 px-4 py-1 rounded-full">
+              </div>
+
+              {/* Title Bar */}
+              <div className="bg-white px-6 py-4">
+                <h3 className="text-lg font-semibold text-[#3a2e25]">
                   {video.title}
-                </p>
+                </h3>
               </div>
             </a>
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <a
           href="https://www.youtube.com/@MichaelHerzCoaching"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-4 bg-[#D9783C] hover:bg-[#b85d29] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-md"
+          className="inline-block mt-4 bg-[#D9783C] hover:bg-[#b85d29] text-white font-semibold px-10 py-4 rounded-full transition transform duration-300 hover:scale-105 shadow-lg"
         >
           Visit My Coaching Channel
         </a>
