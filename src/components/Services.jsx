@@ -1,72 +1,121 @@
 import React from "react";
-import { Users, Brain, MessageSquare } from "lucide-react";
+import {
+  Eye,
+  Handshake,
+  ArrowUp,
+  UserCheck,
+  Users2,
+  BarChart3,
+} from "lucide-react";
 
 const Services = () => {
   const services = [
-    {
-      title: "Stress & Mindset",
-      icon: <Brain className="w-6 h-6 text-[#D9783C]" />,
-      desc: "SIMA Method to manage stress, beat imposter syndrome, and boost confidence."
-    },
-    {
-      title: "Strategic Networking",
-      icon: <Users className="w-6 h-6 text-[#D9783C]" />,
-      desc: "Build authentic relationships and connect with mentors or clients."
-    },
-    {
-      title: "Pro Communication",
-      icon: <MessageSquare className="w-6 h-6 text-[#D9783C]" />,
-      desc: "Master communication with clear frameworks and trusted strategies."
-    },
+    { title: "Clarity Before You Even Walk In", icon: Eye },
+    { title: "Build Your Internal Support System", icon: Handshake, featured: true },
+    { title: "Confidence Through Action", icon: ArrowUp },
+    { title: "Handle Imposter Syndrome", icon: UserCheck },
+    { title: "Communicate with Confidence", icon: Users2 },
+    { title: "Grow Without Burnout", icon: BarChart3 },
   ];
 
   return (
-    <section
-      id="services"
-      className="relative py-20 px-6 bg-[#fdf8f4] "
-    >
-      <div className="max-w-5xl mx-auto text-center space-y-14">
-        {/* Heading */}
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#D9783C]">
-            What Truly Sets Us Apart
+    <section className="relative py-16 px-6 bg-gray-50" id="services">
+      {/* Light background accents */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#D9783C] rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 border-2 border-[#D9783C] rounded-full"></div>
+        <div className="absolute top-1/2 right-10 w-16 h-16 bg-[#D9783C] rounded-full"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12 space-y-4">
+          <p className="text-[#D9783C] text-sm font-semibold uppercase tracking-wide">
+            Coaching Services
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a]/90 leading-tight">
+            A Roadmap for Early Career Confidence
           </h2>
-          <p className="text-[#1a1a1a] mt-2">We help you grow with clarity, not chaos.</p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            No more guessing your way through a new role. My coaching helps you
+            gain clarity, build presence, and grow professionally—without faking it.
+          </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-[#f2e6df] rounded-xl p-6 text-left shadow-sm hover:shadow-md transition duration-300"
-            >
-              <div className="flex items-center justify-center w-10 h-10 bg-[#fdf1ea] rounded-md mb-4">
-                {service.icon}
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {services.map((service, idx) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={idx}
+                className={`bg-white group rounded-2xl p-8 shadow hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden cursor-pointer`}
+              >
+                {/* Icon */}
+                <div
+                  className={`w-16 h-16 bg-[#D9783C] rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-white`}
+                >
+                  <Icon className="w-8 h-8 text-white group-hover:text-[#D9783C] transition-colors duration-300" />
+                </div>
+
+                {/* Text */}
+                <div className="transition-all duration-300 group-hover:text-white">
+                  <h3 className="text-xl font-bold text-[#1a1a1a]/90 mb-4 group-hover:text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-6 text-gray-600 group-hover:text-white">
+                    {getDescription(service.title)}
+                  </p>
+
+                  {/* Index */}
+                  <div className="flex justify-end">
+                    <span className="text-2xl font-bold text-[#D9783C] text-opacity-30 group-hover:text-white group-hover:text-opacity-50 transition-colors duration-300">
+                      0{idx + 1}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Hover BG */}
+                <div className="absolute inset-0 group-hover:bg-[#D9783C] transition-all duration-300 rounded-2xl z-[-1]" />
               </div>
-              <h4 className="text-lg font-semibold text-[#1a1a1a] mb-2">
-                {service.title}
-              </h4>
-              <p className="text-sm text-gray-700">{service.desc}</p>
-              <button className="mt-4 text-[#D9783C] font-semibold text-sm hover:underline">
-                Learn More
-              </button>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA */}
-        <div>
+        <div className="text-center mt-16">
           <a
-            href="#book"
-            className="mt-12 inline-block bg-[#D9783C] hover:bg-[#b85d29] text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-md"
+            href="https://www.linkedin.com/in/michaelherzpmp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#D9783C] hover:bg-[#bd5f2b] text-white font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow"
           >
-            Book a Free Discovery Call
+            Start Your Career With Confidence
           </a>
         </div>
       </div>
     </section>
   );
 };
+
+// Descriptions for each service card
+function getDescription(title) {
+  switch (title) {
+    case "Clarity Before You Even Walk In":
+      return "Know what to ask, how to introduce yourself, and how to earn trust early in your role.";
+    case "Build Your Internal Support System":
+      return "Learn how to network within your team so you're not doing it all alone—and actually feel supported.";
+    case "Confidence Through Action":
+      return "Practical tools to manage stress, show initiative, and communicate with professionalism—without faking it.";
+    case "Handle Imposter Syndrome":
+      return "Recognize the signs, reframe the story, and take grounded action—without spiraling into self-doubt.";
+    case "Communicate with Confidence":
+      return "Learn what to say (and not say) when networking, updating your manager, or contributing in meetings.";
+    case "Grow Without Burnout":
+      return "Success doesn't require pretending. Build your presence and career with purpose, not pressure.";
+    default:
+      return "";
+  }
+}
 
 export default Services;
