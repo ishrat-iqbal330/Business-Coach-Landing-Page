@@ -19,8 +19,8 @@ const Services = () => {
   ];
 
   return (
-    <section className="relative py-16 px-6 bg-gray-50" id="services">
-      {/* Light background accents */}
+    <section className="relative py-16 px-6 bg-[#f5e8e0]" id="services">
+      {/* Background accents */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#D9783C] rounded-full"></div>
         <div className="absolute bottom-20 right-20 w-24 h-24 border-2 border-[#D9783C] rounded-full"></div>
@@ -43,24 +43,22 @@ const Services = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {services.map((service, idx) => {
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {services.map((service) => {
             const Icon = service.icon;
             return (
               <div
-                key={idx}
-                className={`bg-white group rounded-2xl p-8 shadow hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden cursor-pointer`}
+                key={service.title}
+                className="bg-white group rounded-2xl p-6 sm:p-8 shadow hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden cursor-pointer"
               >
                 {/* Icon */}
-                <div
-                  className={`w-16 h-16 bg-[#D9783C] rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-white`}
-                >
-                  <Icon className="w-8 h-8 text-white group-hover:text-[#D9783C] transition-colors duration-300" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#D9783C] rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-white">
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white group-hover:text-[#D9783C] transition-colors duration-300" />
                 </div>
 
                 {/* Text */}
                 <div className="transition-all duration-300 group-hover:text-white">
-                  <h3 className="text-xl font-bold text-[#1a1a1a]/90 mb-4 group-hover:text-white">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1a1a1a]/90 mb-4 group-hover:text-white">
                     {service.title}
                   </h3>
                   <p className="text-sm leading-relaxed mb-6 text-gray-600 group-hover:text-white">
@@ -69,8 +67,8 @@ const Services = () => {
 
                   {/* Index */}
                   <div className="flex justify-end">
-                    <span className="text-2xl font-bold text-[#D9783C] text-opacity-30 group-hover:text-white group-hover:text-opacity-50 transition-colors duration-300">
-                      0{idx + 1}
+                    <span className="text-xl sm:text-2xl font-bold text-[#D9783C] text-opacity-30 group-hover:text-white group-hover:text-opacity-50 transition-colors duration-300">
+                      0{services.indexOf(service) + 1}
                     </span>
                   </div>
                 </div>
@@ -88,7 +86,7 @@ const Services = () => {
             href="https://www.linkedin.com/in/michaelherzpmp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#D9783C] hover:bg-[#bd5f2b] text-white font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow"
+            className="inline-block bg-[#D9783C] hover:bg-[#bd5f2b] text-white font-semibold px-4 sm:px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow whitespace-nowrap"
           >
             Start Your Career With Confidence
           </a>

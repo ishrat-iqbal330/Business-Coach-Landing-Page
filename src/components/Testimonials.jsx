@@ -131,7 +131,7 @@ const Testimonials = () => {
                   <img
                     src={testimonials[currentSlide].image}
                     alt={testimonials[currentSlide].name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-full"
                   />
                 </div>
                 <div>

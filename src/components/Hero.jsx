@@ -5,7 +5,7 @@ import Maxwrapper from "./Maxwrapper";
 const Hero = () => {
   return (
     <Maxwrapper>
-      <div className="flex flex-col-reverse md:flex-row gap-9 items-center justify-center min-h-screen px-6 py-12">
+      <div className="flex flex-col md:flex-row gap-9 items-center justify-center min-h-screen px-6 py-12">
         
         <motion.div
           initial={{ opacity: 0, x: -50 }}

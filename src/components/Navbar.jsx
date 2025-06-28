@@ -86,13 +86,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div
-            className={`md:hidden mt-4 space-y-4 text-sm font-medium transition-all duration-300 ${
-              isScrolled
-                ? "bg-[#151414]/90 backdrop-blur-lg rounded-2xl mx-4 p-4 border border-white/10"
-                : ""
-            }`}
-          >
+          <div className="md:hidden mt-4 mx-4 p-4 bg-[#151414]/90 backdrop-blur-lg rounded-2xl border border-white/10 space-y-4 text-sm font-medium transition-all duration-300">
             {navLinks.map((link) => (
               <a
                 key={link.name}
